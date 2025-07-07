@@ -1,12 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Services;
 
 use GuzzleHttp\Client;
 use App\Models\Order;
 
-class NetoController extends Controller
+class OrderService
 {
+    /**
+     * Create a new class instance.
+     */
+    public function __construct() {}
+
     public function fetchBunningsOrders()
     {
         $client = new \GuzzleHttp\Client();
