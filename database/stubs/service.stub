@@ -1,0 +1,32 @@
+<?php
+
+namespace {{ namespace }};
+
+class {{ class }}
+{
+    private array $response = [
+        'status' => null,
+        'message' => null,
+        'data' => null,
+        'code' => 200,
+    ];
+
+    public function execute() {
+        try{
+            // Your code goes here
+
+            $this->response['status'] = true;
+            $this->response['message'] = ''; // remove this code if you don't have any message to return
+            $this->response['data'] = [
+                // remove this code if you don't have any data to return
+            ];           
+            return $this->response;
+        }
+        catch(\Exception $e){
+            $this->response['status'] = false;
+            $this->response['message'] = $e->getMessage();
+            $this->response['code'] = (int)$e->getCode() ?: 500;
+            return $this->response;
+        }
+    }
+}
