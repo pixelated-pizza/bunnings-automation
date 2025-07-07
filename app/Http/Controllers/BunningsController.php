@@ -17,7 +17,7 @@ class BunningsController extends Controller
     }
 
    public function fetch_orders(OrderService $service) {
-        $result = $service->fetchBunningsOrders();
+        $result = $service->execute();
         if ($result['status']) {
             return RequestResponse::setData($result['data'])->success();
         }
