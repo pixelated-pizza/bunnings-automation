@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 
 class OAuthService
 {
@@ -46,7 +47,7 @@ class OAuthService
             ];
 
             return $this->response;
-        } catch (\GuzzleHttp\Exception\RequestException $e) {
+        } catch (RequestException $e) {
             $errorBody = $e->hasResponse() ? $e->getResponse()->getBody()->getContents() : $e->getMessage();
             $this->response['status'] = false;
             $this->response['message'] = 'Request failed: ' . $errorBody;
