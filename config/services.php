@@ -35,9 +35,10 @@ return [
         ],
     ],
 
-    'neto' => [
-        'url' => env('NETO_API_URL'),
-        'key' => env('NETO_API_KEY'),
+    'bunnings' => [
+        'client_id' => env('BCLIENT_ID'),
+        'client_secret' => env('BSECRET'),
+        'auth_url' => env('BAUTH_URL')
     ],
 
 ];

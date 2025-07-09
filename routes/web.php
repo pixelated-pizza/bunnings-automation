@@ -8,4 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/api/get-orders', [BunningsController::class, 'fetch_orders']);
+Route::get('/api/oauth', [BunningsController::class, 'auth']);
 
